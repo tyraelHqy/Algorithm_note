@@ -7,12 +7,12 @@ public class SelectionSort {
         for (int i = 0; i < arr.length; i++) {
             // 选择arr[i...n) 中最小值的索引
             int minIndex = i;
-            for (int j = i; j < arr.length; j++) {
+            for (int j = i+1; j < arr.length; j++) {
                 if (arr[j].compareTo(arr[minIndex]) < 0) {
                     minIndex = j;
                 }
-                swap(arr, i, minIndex);
             }
+            swap(arr, i, minIndex);
         }
     }
 
@@ -27,6 +27,18 @@ public class SelectionSort {
         SelectionSort.sort(arr);
         for (int e : arr) {
             System.out.print(e + " ");
+        }
+        System.out.println();
+
+        Student[] students = {
+                new Student("Lihua", 45),
+                new Student("YangGuo", 110),
+                new Student("GuoJin", 2),
+                new Student("DuanYu", 82)
+        };
+        SelectionSort.sort(students);
+        for (Student s : students) {
+            System.out.print(s.toString() + " ");
         }
         System.out.println();
     }
