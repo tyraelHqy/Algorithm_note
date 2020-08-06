@@ -7,7 +7,7 @@ public class SelectionSort {
         for (int i = 0; i < arr.length; i++) {
             // 选择arr[i...n) 中最小值的索引
             int minIndex = i;
-            for (int j = i+1; j < arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j].compareTo(arr[minIndex]) < 0) {
                     minIndex = j;
                 }
@@ -23,8 +23,7 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 2, 4, 3, 5, 6};
-        SelectionSort.sort(arr);
+        Integer[] arr = {1, 2, 4, 3, 6, 5};
         for (int e : arr) {
             System.out.print(e + " ");
         }
@@ -41,5 +40,13 @@ public class SelectionSort {
             System.out.print(s.toString() + " ");
         }
         System.out.println();
+
+        int n = 10000;
+        Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
+        long startTime = System.nanoTime();
+        SelectionSort.sort(arrs);
+        long endTime = System.nanoTime();
+        double time = (endTime - startTime) / 1000000000.0;
+        System.out.println(time + "s");
     }
 }
