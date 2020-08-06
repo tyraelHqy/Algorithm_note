@@ -16,6 +16,21 @@ public class SelectionSort {
         }
     }
 
+
+    // 换个角度实现选择排序的方法
+    public static <E extends Comparable<E>> void sort2(E[] arr) {
+        for (int i = arr.length - 1; i >= 0 ; i--){
+            int maxIndex = i;
+            for(int j = i ; j >= 0; j--){
+                if(arr[j].compareTo(arr[maxIndex])>0){
+                    maxIndex = j;
+                }
+            }
+            swap(arr,i,maxIndex);
+        }
+    }
+
+
     private static <E> void swap(E[] arr, int i, int j) {
         E temp = arr[i];
         arr[i] = arr[j];
@@ -23,12 +38,6 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 2, 4, 3, 6, 5};
-        for (int e : arr) {
-            System.out.print(e + " ");
-        }
-        System.out.println();
-
         Student[] students = {
                 new Student("Lihua", 45),
                 new Student("YangGuo", 110),
@@ -41,12 +50,10 @@ public class SelectionSort {
         }
         System.out.println();
 
-        int n = 10000;
-        Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
-        long startTime = System.nanoTime();
-        SelectionSort.sort(arrs);
-        long endTime = System.nanoTime();
-        double time = (endTime - startTime) / 1000000000.0;
-        System.out.println(time + "s");
+        int[] dataSize = {10000, 100000};
+        for (int n : dataSize) {
+            Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
+            SortingHelper.sortTest("SelectionSort", arrs);
+        }
     }
 }
