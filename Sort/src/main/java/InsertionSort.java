@@ -7,6 +7,12 @@ public class InsertionSort {
     private InsertionSort() {
     }
 
+    /**
+     * 循环不变量：arr[0，i）已排好序；arr[i...n）未排序
+     *
+     * @param arr
+     * @param <E>
+     */
     public static <E extends Comparable<E>> void sort(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
 
@@ -25,6 +31,12 @@ public class InsertionSort {
         }
     }
 
+    /**
+     * 插入排序算法的改进版本，不使用swap，使用移位的方式
+     *
+     * @param arr
+     * @param <E>
+     */
     public static <E extends Comparable<E>> void sort2(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
 
@@ -38,6 +50,24 @@ public class InsertionSort {
         }
     }
 
+    /**
+     * 循环不变量：arr[0，i）未排好序；arr[i...n）排序
+     *
+     * @param arr
+     * @param <E>
+     */
+    public static <E extends Comparable<E>> void sort3(E[] arr) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+
+            // 将 arr[i] 进行暂存
+            E t = arr[i];
+            int j;
+            for (j = i; j + 1 < arr.length && t.compareTo(arr[j + 1]) > 0; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[j] = t;
+        }
+    }
 
     private static <E> void swap(E[] arr, int i, int j) {
         E temp = arr[i];
@@ -51,8 +81,10 @@ public class InsertionSort {
             System.out.println("Random Array : ");
             Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
             Integer[] arrs2 = Arrays.copyOf(arrs, arrs.length);
+            Integer[] arrs3 = Arrays.copyOf(arrs, arrs.length);
             SortingHelper.sortTest("InsertionSort2", arrs);
             SortingHelper.sortTest("SelectionSort", arrs2);
+            SortingHelper.sortTest("InsertionSort3", arrs3);
             System.out.println();
 
             System.out.println("Order Array : ");
