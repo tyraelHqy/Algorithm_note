@@ -1,3 +1,8 @@
+import java.util.Arrays;
+
+/**
+ * @author Tyrael
+ */
 public class InsertionSort {
     private InsertionSort() {
     }
@@ -18,7 +23,19 @@ public class InsertionSort {
 //            }
 
         }
+    }
 
+    public static <E extends Comparable<E>> void sort2(E[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+
+            // 将 arr[i] 进行暂存
+            E t = arr[i];
+            int j;
+            for (j = i; j - 1 >= 0 && t.compareTo(arr[j - 1]) < 0; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[j] = t;
+        }
     }
 
 
@@ -32,7 +49,9 @@ public class InsertionSort {
         int[] dataSize = {10000, 100000};
         for (int n : dataSize) {
             Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
-            SortingHelper.sortTest("InsertionSort", arrs);
+            Integer[] arrs2 = Arrays.copyOf(arrs, arrs.length);
+            SortingHelper.sortTest("InsertionSort1", arrs);
+            SortingHelper.sortTest("InsertionSort2", arrs2);
         }
     }
 }

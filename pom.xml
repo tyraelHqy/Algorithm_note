@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>SelectionSort</module>
+        <module>Sort</module>
         <module>LinearSearch</module>
     </modules>
 </project>
