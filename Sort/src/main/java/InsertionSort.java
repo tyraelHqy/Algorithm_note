@@ -48,10 +48,19 @@ public class InsertionSort {
     public static void main(String[] args) {
         int[] dataSize = {10000, 100000};
         for (int n : dataSize) {
+            System.out.println("Random Array : ");
             Integer[] arrs = ArrayGenerator.generatorRandomArray(n, n);
             Integer[] arrs2 = Arrays.copyOf(arrs, arrs.length);
-            SortingHelper.sortTest("InsertionSort1", arrs);
-            SortingHelper.sortTest("InsertionSort2", arrs2);
+            SortingHelper.sortTest("InsertionSort2", arrs);
+            SortingHelper.sortTest("SelectionSort", arrs2);
+            System.out.println();
+
+            System.out.println("Order Array : ");
+            arrs = ArrayGenerator.generatorOrderedArray(n);
+            arrs2 = Arrays.copyOf(arrs, arrs.length);
+            SortingHelper.sortTest("InsertionSort2", arrs);
+            SortingHelper.sortTest("SelectionSort", arrs2);
+            System.out.println();
         }
     }
 }
