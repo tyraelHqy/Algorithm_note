@@ -20,3 +20,5 @@
 但并非所有有语意的索引都适用于数组;
 
 基于java的数组，二次封装属于我们自己的数组类
+
+![](https://cdn.jsdelivr.net/gh/tyraelHqy/cloudimg@master/img/20200820204037.png)
