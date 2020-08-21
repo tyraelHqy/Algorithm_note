@@ -5,6 +5,8 @@ public class Main {
         for (int i = 0; i < 4; i++) {
             arrayStack.push(i);
         }
+        arrayStack.pop();
+
         System.out.println(arrayStack);
     }
 }

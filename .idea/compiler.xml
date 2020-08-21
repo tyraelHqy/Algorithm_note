@@ -6,14 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Stack" />
         <module name="Sort" />
-        <module name="Array" />
+        <module name="Stack" />
         <module name="LinearSearch" />
+        <module name="Array" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="Algorithm_note" target="8" />
+      <module name="Algorithm_note" target="1.5" />
       <module name="Array" target="8" />
       <module name="LinearSearch" target="8" />
       <module name="Sort" target="8" />
