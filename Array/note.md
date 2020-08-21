@@ -22,3 +22,5 @@
 基于java的数组，二次封装属于我们自己的数组类
 
 ![](https://cdn.jsdelivr.net/gh/tyraelHqy/cloudimg@master/img/20200820204037.png)
+
+![](https://cdn.jsdelivr.net/gh/tyraelHqy/cloudimg@master/img/20200821145808.png)
