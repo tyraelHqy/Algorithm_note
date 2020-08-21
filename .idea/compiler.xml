@@ -6,16 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SelectionSort" />
         <module name="Sort" />
-        <module name="LinearSearch" />
         <module name="Array" />
+        <module name="LinearSearch" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Algorithm_note" target="1.5" />
-      <module name="Array" target="1.5" />
-      <module name="LinearSearch" target="1.5" />
-      <module name="Sort" target="6" />
+    <bytecodeTargetLevel target="8">
+      <module name="Algorithm_note" target="8" />
+      <module name="Array" target="8" />
+      <module name="LinearSearch" target="8" />
+      <module name="SelectionSort" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
