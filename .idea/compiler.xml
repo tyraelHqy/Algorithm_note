@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Queue" />
         <module name="Sort" />
         <module name="Stack" />
         <module name="LinearSearch" />
@@ -13,9 +14,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="Algorithm_note" target="1.5" />
+      <module name="Algorithm_note" target="8" />
       <module name="Array" target="8" />
       <module name="LinearSearch" target="8" />
+      <module name="Queue" target="8" />
       <module name="Sort" target="8" />
       <module name="Stack" target="8" />
     </bytecodeTargetLevel>
