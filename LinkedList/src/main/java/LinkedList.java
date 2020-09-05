@@ -137,20 +137,55 @@ public class LinkedList<E> {
      */
     public boolean contains(E e) {
         Node cur = dummyHead.next;
-        while(cur != null){
-            if(cur.e.equals(e)){
+        while (cur != null) {
+            if (cur.e.equals(e)) {
                 return true;
             }
         }
         return false;
     }
 
+    /**
+     * 从链表中删除index(0 - base)位置的元素，返回删除的元素
+     * 在链表中不是一个常用的操作
+     */
+    public E remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Add Failed. Illegal index.");
+        }
+        Node prev = dummyHead;
+        for (int i = 0; i < index; i++) {
+            prev = prev.next;
+        }
+        Node returnNode = prev.next;
+        prev.next = returnNode.next;
+        returnNode.next = null;
+        size--;
+
+        return returnNode.e;
+    }
+
+    /**
+     * 从列表中删除第一个元素，返回删除的元素
+     */
+    public E removeFirst(){
+        return remove(0);
+    }
+
+    /**
+     * 从列表中删除第一个元素，返回删除的元素
+     */
+    public E removeLast(){
+        return remove(size -1);
+    }
+
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
         Node cur = dummyHead.next;
-        while (cur != null){
-            res.append(cur + " -> " );
+        while (cur != null) {
+            res.append(cur + " -> ");
             cur = cur.next;
         }
         res.append("Null");
