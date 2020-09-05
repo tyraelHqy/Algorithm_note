@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Queue" />
-        <module name="Sort" />
-        <module name="Stack" />
         <module name="LinearSearch" />
+        <module name="Sort" />
+        <module name="SelectionSort" />
+        <module name="Stack" />
+        <module name="LinkedList" />
         <module name="Array" />
       </profile>
     </annotationProcessing>
@@ -17,7 +19,9 @@
       <module name="Algorithm_note" target="8" />
       <module name="Array" target="8" />
       <module name="LinearSearch" target="8" />
+      <module name="LinkedList" target="8" />
       <module name="Queue" target="8" />
+      <module name="SelectionSort" target="8" />
       <module name="Sort" target="8" />
       <module name="Stack" target="8" />
     </bytecodeTargetLevel>
