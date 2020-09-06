@@ -8,11 +8,7 @@ public class Solution_Recursion {
         }
 
         head.next = removeElements(head.next, val);
-        if (head.val == val) {
-            return head.next;
-        } else {
-            return head;
-        }
+        return head.val == val ? head.next : head;
     }
 
     public static void main(String[] args) {
