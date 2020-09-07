@@ -10,3 +10,10 @@
 
 ![](https://cdn.jsdelivr.net/gh/tyraelHqy/cloudimg@master/img/20200817151729.png)
 插入排序法的重要特性：对于有序数组，插入排序的复杂度是O(n)的，对比，选择排序的复杂度永远是O(n^2)的
+
+## 归并排序
+![](https://i.loli.net/2020/09/07/VEZD2tIGpcH7Bzg.png)
+![](https://i.loli.net/2020/09/07/v8Q47m1Ic5W3YCU.png)
+![](https://i.loli.net/2020/09/07/tIFfhHTLgP6ZVxD.png)
+![](https://i.loli.net/2020/09/07/c68QbHlGdPJagTe.png)
+![](https://i.loli.net/2020/09/07/BzK8oJTHMmVPf4h.png)
