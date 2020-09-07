@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SelectionSort</artifactId>
+    <artifactId>Sort</artifactId>
     <build>
         <plugins>
             <plugin>
