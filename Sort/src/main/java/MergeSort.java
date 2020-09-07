@@ -9,7 +9,7 @@ public class MergeSort {
     }
 
     private static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
-        if (l > r) {
+        if (l >= r) {
             return;
         }
         int mid = (l + r) / 2;
@@ -28,23 +28,29 @@ public class MergeSort {
         int i = l, j = mid + 1;
 
         // 每轮循环为 arr[k] 赋值
-        for (int k = 0; k <= r; k++) {
+        for (int k = l; k <= r; k++) {
 
             if (i > mid) {
                 arr[k] = temp[j - l];
                 j++;
-            } else if (i < mid && j > r) {
+            } else if (j > r) {
+                arr[k] = temp[i - l];
+                i++;
+            } else if (temp[i - l].compareTo(temp[j - l]) <= 0) {
                 arr[k] = temp[i - l];
                 i++;
             } else {
-                if (temp[i - l].compareTo(temp[j - l]) <= 0) {
-                    arr[k] = temp[i - l];
-                    i++;
-                } else {
-                    arr[k] = temp[j - l];
-                    j++;
-                }
+                arr[k] = temp[j - l];
+                j++;
             }
         }
+    }
+
+
+    public static void main(String[] args) {
+
+        int n = 10000;
+        Integer[] arr = ArrayGenerator.generatorRandomArray(n, n);
+        SortingHelper.sortTest("MergeSort", arr);
     }
 }
