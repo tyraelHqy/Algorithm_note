@@ -31,6 +31,19 @@ public class InsertionSort {
         }
     }
 
+    public static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+        for (int i = l; i <= r; i++) {
+
+            // 将 arr[i] 进行暂存
+            E t = arr[i];
+            int j;
+            for (j = i; j - 1 >= 0 && t.compareTo(arr[j - 1]) < 0; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[j] = t;
+        }
+    }
+
     /**
      * 插入排序算法的改进版本，不使用swap，使用移位的方式
      *

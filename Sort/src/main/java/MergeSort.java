@@ -12,11 +12,36 @@ public class MergeSort {
         if (l >= r) {
             return;
         }
+
         int mid = (l + r) / 2;
         sort(arr, l, mid);
         sort(arr, mid + 1, r);
         merge(arr, l, mid, r);
     }
+
+    public static <E extends Comparable<E>> void sort2(E[] arr) {
+        sort2(arr, 0, arr.length - 1);
+    }
+
+    private static <E extends Comparable<E>> void sort2(E[] arr, int l, int r) {
+        if (l >= r) {
+            return;
+        }
+
+        // 区间中的元素个数不大于16
+//        if (r - l <= 15) {
+//            InsertionSort.sort(arr, l, r);
+//            return;
+//        }
+        int mid = (l + r) / 2;
+        sort2(arr, l, mid);
+        sort2(arr, mid + 1, r);
+
+        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
+            merge(arr, l, mid, r);
+        }
+    }
+
 
     // 合并两个有序的区间 arr[l,mid] 和 arr[mid+1,r]
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
@@ -50,7 +75,16 @@ public class MergeSort {
     public static void main(String[] args) {
 
         int n = 10000;
+
         Integer[] arr = ArrayGenerator.generatorRandomArray(n, n);
-        SortingHelper.sortTest("MergeSort", arr);
+        Integer[] arr2 = Arrays.copyOf(arr, arr.length);
+        Integer[] arr3 = Arrays.copyOf(arr, arr.length);
+        Integer[] arr4 = Arrays.copyOf(arr, arr.length);
+
+
+        SortingHelper.sortTest("SelectionSort", arr);
+        SortingHelper.sortTest("InsertionSort1", arr2);
+        SortingHelper.sortTest("MergeSort", arr3);
+        SortingHelper.sortTest("MergeSort2", arr4);
     }
 }
