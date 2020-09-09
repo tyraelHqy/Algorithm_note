@@ -20,3 +20,16 @@
 ![](https://i.loli.net/2020/09/08/3BZigyJHN1DYsAe.png)
 ![](https://i.loli.net/2020/09/08/PJEL4o5AXDMdQik.png)
 ![](https://i.loli.net/2020/09/08/fP1XHIghyobCiaA.png)
+![](https://i.loli.net/2020/09/08/48WzoKdNJvHa7OI.png)
+
+
+![](https://cdn.jsdelivr.net/gh/tyraelHqy/cloudimg@master/img/20200909010047.png)
+![](https://i.loli.net/2020/09/09/tz7KwsYVXHAuDji.png)
+
+## 快速排序
+![](https://i.loli.net/2020/09/09/7Z2yTObC3sq5hox.png)
+![](https://i.loli.net/2020/09/09/t2NTy4YMxQEuezw.png)
+![](https://i.loli.net/2020/09/09/wa6lvdEV4DgrTJZ.png)
+![](https://i.loli.net/2020/09/09/N1vI5roHkpKxLeR.png)
+![](https://i.loli.net/2020/09/09/xBq2lkMLvRS6tUj.png)
+![](https://i.loli.net/2020/09/09/1au2wOQzbCRDeHj.png)

@@ -40,6 +40,12 @@ public class SortingHelper {
         else if ("MergeSort3".equals(sortname)) {
             MergeSort.sort3(arr);
         }
+        else if ("MergeSortBU".equals(sortname)) {
+            MergeSort.sortBU(arr);
+        }
+        else if ("QuickSort".equals(sortname)) {
+            QuickSort.sort(arr);
+        }
         long endTime = System.nanoTime();
         double time = (endTime - startTime) / 1000000000.0;
 

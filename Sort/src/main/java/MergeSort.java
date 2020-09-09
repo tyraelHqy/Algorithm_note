@@ -42,6 +42,25 @@ public class MergeSort {
         }
     }
 
+    public static <E extends Comparable<E>> void sortBU(E[] arr) {
+
+        E[] temp = Arrays.copyOf(arr, arr.length);
+
+        int n = arr.length;
+
+        // 遍历合并的区间长度
+        for (int sz = 1; sz < n; sz += sz) {
+
+            // 遍历合并的两个区间的起始位置i
+
+            // 合并[i,i+sz-1]和[i+sz,i+sz+sz-1]
+            for (int i = 0; i + sz < n; i += sz + sz) {
+                if (arr[i + sz - 1].compareTo(arr[i + sz]) > 0) {
+                    merge3(arr, i, i + sz - 1, Math.min(i + sz + sz - 1, n - 1), temp);
+                }
+            }
+        }
+    }
 
     // 合并两个有序的区间 arr[l,mid] 和 arr[mid+1,r]
     private static <E extends Comparable<E>> void merge(E[] arr, int l, int mid, int r) {
@@ -126,13 +145,14 @@ public class MergeSort {
 
     public static void main(String[] args) {
 
-        int n = 100000;
+        int n = 10000;
 
         Integer[] arr = ArrayGenerator.generatorRandomArray(n, n);
         Integer[] arr2 = Arrays.copyOf(arr, arr.length);
         Integer[] arr3 = Arrays.copyOf(arr, arr.length);
         Integer[] arr4 = Arrays.copyOf(arr, arr.length);
         Integer[] arr5 = Arrays.copyOf(arr, arr.length);
+        Integer[] arr6 = Arrays.copyOf(arr, arr.length);
 
 
         SortingHelper.sortTest("SelectionSort", arr);
@@ -140,5 +160,6 @@ public class MergeSort {
         SortingHelper.sortTest("MergeSort", arr3);
         SortingHelper.sortTest("MergeSort2", arr4);
         SortingHelper.sortTest("MergeSort3", arr5);
+        SortingHelper.sortTest("MergeSortBU", arr6);
     }
 }
