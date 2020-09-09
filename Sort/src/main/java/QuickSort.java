@@ -1,6 +1,9 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class QuickSort {
+    private final static Random RANDOM = new Random();
+
     private QuickSort() {
 
     }
@@ -20,6 +23,10 @@ public class QuickSort {
     }
 
     private static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
+
+        // 生成[l,r]之间的随机索引
+        int p = l + RANDOM.nextInt(r - l + 1);
+        swap(arr, l, p);
         // 循环不变量： arr[l+1,j] < v ,arr[j+1,i] >= v
         int j = l;
         for (int i = l + 1; i <= r; i++) {
@@ -40,10 +47,15 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int n = 100000;
-        Integer[] arr = ArrayGenerator.generatorRandomArray(n,n);
-        Integer[] arr2 = Arrays.copyOf(arr,arr.length);
-        SortingHelper.sortTest("MergeSort",arr);
-        SortingHelper.sortTest("QuickSort",arr2);
+        int n = 50000;
+        Integer[] arr = ArrayGenerator.generatorRandomArray(n, n);
+        Integer[] arr2 = Arrays.copyOf(arr, arr.length);
+        SortingHelper.sortTest("MergeSort", arr);
+        SortingHelper.sortTest("QuickSort", arr2);
+
+        arr = ArrayGenerator.generatorOrderedArray(n);
+        arr2 = Arrays.copyOf(arr, arr.length);
+        SortingHelper.sortTest("MergeSort", arr);
+        SortingHelper.sortTest("QuickSort", arr2);
     }
 }
