@@ -15,6 +15,7 @@
         <module>Stack</module>
         <module>Queue</module>
         <module>LinkedList</module>
+        <module>BinarySearch</module>
     </modules>
     <build>
         <plugins>
