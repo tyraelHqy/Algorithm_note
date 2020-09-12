@@ -16,6 +16,7 @@
         <module>Queue</module>
         <module>LinkedList</module>
         <module>BinarySearch</module>
+        <module>BST</module>
     </modules>
     <build>
         <plugins>

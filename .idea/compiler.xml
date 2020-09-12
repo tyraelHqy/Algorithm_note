@@ -11,6 +11,7 @@
         <module name="Sort" />
         <module name="SelectionSort" />
         <module name="Stack" />
+        <module name="BST" />
         <module name="BinarySearch" />
         <module name="LinkedList" />
         <module name="Array" />
@@ -20,6 +21,7 @@
       <module name="Algorithm_note" target="8" />
       <module name="Array" target="8" />
       <module name="BinarySearch" target="8" />
+      <module name="BST" target="8" />
       <module name="LinearSearch" target="8" />
       <module name="LinkedList" target="8" />
       <module name="Queue" target="8" />
