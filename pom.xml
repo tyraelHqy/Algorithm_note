@@ -18,6 +18,7 @@
         <module>BinarySearch</module>
         <module>BST</module>
         <module>Set</module>
+        <module>Map</module>
     </modules>
     <build>
         <plugins>

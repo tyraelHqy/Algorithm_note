@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Set" />
         <module name="Queue" />
+        <module name="Map" />
         <module name="LinearSearch" />
         <module name="Sort" />
         <module name="SelectionSort" />
@@ -25,6 +26,7 @@
       <module name="BST" target="8" />
       <module name="LinearSearch" target="8" />
       <module name="LinkedList" target="8" />
+      <module name="Map" target="8" />
       <module name="Queue" target="8" />
       <module name="SelectionSort" target="8" />
       <module name="Set" target="8" />
