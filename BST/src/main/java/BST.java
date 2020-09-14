@@ -160,17 +160,17 @@ public class BST<E extends Comparable<E>> {
     /**
      * 二分搜索树的层序遍历
      */
-    public void levelOrder(){
+    public void levelOrder() {
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node cur = queue.remove();
             System.out.println(cur.e);
 
-            if(cur.left != null){
+            if (cur.left != null) {
                 queue.add(cur.left);
             }
-            if(cur.right != null){
+            if (cur.right != null) {
                 queue.add(cur.right);
             }
         }
@@ -204,4 +204,104 @@ public class BST<E extends Comparable<E>> {
         }
         return res.toString();
     }
+
+    /**
+     * 寻找二分搜索树的最小元素
+     *
+     * @return
+     */
+    public E minmum() {
+        if (size == 0) {
+            throw new IllegalArgumentException("BST is Empty");
+        }
+
+        return minmum(root).e;
+    }
+
+    private Node minmum(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        return minmum(node.left);
+    }
+
+    /**
+     * 寻找二分搜索树的最大元素
+     *
+     * @return
+     */
+    public E maxmum() {
+        if (size == 0) {
+            throw new IllegalArgumentException("BST is Empty");
+        }
+
+        return maxmum(root).e;
+    }
+
+    private Node maxmum(Node node) {
+        if (node.right == null) {
+            return node;
+        }
+        return maxmum(node.right);
+    }
+
+    /**
+     * 从二分搜索树中删除最小值所在的节点，返回最小值
+     *
+     * @return
+     */
+    public E removeMin() {
+        E ret = minmum();
+        removeMin(root);
+        return ret;
+    }
+
+    /**
+     * 删除掉以node为根的二分搜索树中的最小节点，
+     * 返回删除节点后新的二分搜索树的根
+     *
+     * @param node
+     * @return
+     */
+    private Node removeMin(Node node) {
+        if (node.left == null) {
+            Node rightNode = node.right;
+            node.right = null;
+            size--;
+            return rightNode;
+        }
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    /**
+     * 从二分搜索树中删除最大值所在的节点，返回最大值
+     *
+     * @return
+     */
+    public E removeMax() {
+        E ret = maxmum();
+        removeMax(root);
+        return ret;
+    }
+
+    /**
+     * 删除掉以node为根的二分搜索树中的最小节点，
+     * 返回删除节点后新的二分搜索树的根
+     *
+     * @param node
+     * @return
+     */
+    private Node removeMax(Node node) {
+        if (node.right == null) {
+            Node leftNode = node.left;
+            node.left = null;
+            size--;
+            return leftNode;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+
 }
