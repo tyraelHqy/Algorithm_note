@@ -17,6 +17,7 @@
         <module>LinkedList</module>
         <module>BinarySearch</module>
         <module>BST</module>
+        <module>Set</module>
     </modules>
     <build>
         <plugins>

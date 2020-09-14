@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Set" />
         <module name="Queue" />
         <module name="LinearSearch" />
         <module name="Sort" />
@@ -26,6 +27,7 @@
       <module name="LinkedList" target="8" />
       <module name="Queue" target="8" />
       <module name="SelectionSort" target="8" />
+      <module name="Set" target="8" />
       <module name="Sort" target="8" />
       <module name="Stack" target="8" />
     </bytecodeTargetLevel>
